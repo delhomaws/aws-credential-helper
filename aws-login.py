@@ -81,13 +81,13 @@ def open_in_firefox(url, container):
         # Path to Firefox - Update this to the path where Firefox is installed on your system
         firefox_path = '/Applications/Firefox.app/Contents/MacOS/firefox'  # For macOS
         if container == "":
-            
-            command = "open -a Firefox --url '{}'".format(url)
+            url = url
+            # command = "open -a Firefox --url '{}'".format(url)
         else:
             # container = urllib.parse.quote(container)
             url = urllib.parse.quote(url)
             url = "ext+container:name={}&url={}".format(container, url)
-            command = "firefox --url 'ext+container:name={}&url={}'".format(container, url)
+            # command = "firefox --url 'ext+container:name={}&url={}'".format(container, url)
         
         
         # print(f'Url is: {url}')
