@@ -36,13 +36,14 @@ python aws-login.py --profile <AWS_PROFILE> --target <AWS_ACCOUNT_ID> --role <RO
 ```
 
 Where:
-   * `--profile <AWS_PROFILE>` (Required): Specify the AWS profile name to use for authentication. This is the profile in your AWS configuration (`~/.aws/config`) that contains the necessary credentials for assuming roles.
-   * `--target <AWS_ACCOUNT_ID>` (Required): Specify the AWS account ID of the target account to assume the role in.
-   * `--role <ROLE_NAME>` (Required): Specify the role you have to assume into the target account
-   * `--firefox` (Optional): Include this flag to open the AWS Management Console sign-in URL in a new Firefox window.
-   * `--chrome` (Optional): Include this flag to open the AWS Management Console sign-in URL in a new Chrome instance.
-   * `--clipboard` (Optional): Include this flag to copy the AWS Management Console sign-in URL to the clipboard.
-   * `--cli` (Optional): Include this flag to open a bash terminal session to the target account
+
+* `--profile <AWS_PROFILE>` (Required): Specify the AWS profile name to use for authentication. This is the profile in your AWS configuration (`~/.aws/config`) that contains the necessary credentials for assuming roles.
+* `--target <AWS_ACCOUNT_ID>` (Required): Specify the AWS account ID of the target account to assume the role in.
+* `--role <ROLE_NAME>` (Required): Specify the role you have to assume into the target account
+* `--firefox` (Optional): Include this flag to open the AWS Management Console sign-in URL in a new Firefox window.
+* `--chrome` (Optional): Include this flag to open the AWS Management Console sign-in URL in a new Chrome instance.
+* `--clipboard` (Optional): Include this flag to copy the AWS Management Console sign-in URL to the clipboard.
+* `--cli` (Optional): Include this flag to open a bash terminal session to the target account
 
 1. The script will perform the following actions based on the provided options:
 
