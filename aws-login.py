@@ -183,7 +183,6 @@ def main():
         subprocess.Popen("bash", shell=True, env=new_env).wait() # nosemgrep: insecure-subprocess-use # nosec B605 B602 B607 - used for the purpose of the tool.
     if args.chrome:
         print("New Chrome instance opened")
-        os.popen(f'mkdir -p /Users/$(whoami)/chrome-profiles/{profile_name} && 'f'open -n -a /Applications/Google\ Chrome.app "{console_login_url}" --args --user-data-dir=/Users/$(whoami)/chrome-profiles/{profile_name}') # nosemgrep: insecure-os-exec-use dangerous-system-call-tainted-env-args dangerous-system-call-audit # nosec B605 - used for the purpose of the tool.
-
+        os.popen(f'mkdir -p /Users/$(whoami)/chrome-profiles/{profile_name} && open -n -a "/Applications/Google Chrome.app" "{console_login_url}" --args --user-data-dir=/Users/$(whoami)/chrome-profiles/{profile_name}') # nosemgrep: insecure-os-exec-use dangerous-system-call-tainted-env-args dangerous-system-call-audit # nosec B605 - used for the purpose of the tool.
 if __name__ == "__main__":
     main()
