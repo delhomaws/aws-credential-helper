@@ -4,13 +4,18 @@
 
 Before using this script, make sure you have the following prerequisites:
 
-1. Boto3: Install the Boto3 library using pip:
+### 1. Boto3: Install the Boto3 library using pip:
 
 ```bash
 pip install boto3 requests urllib3 subprocess32 pyperclip argparse
 ```
 
-1. The .aws/config file should have:
+### 2. For FireFox install 2 extentions
+    - Firefox Multi-Account Containers: https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/
+    - Open external links in a container: https://addons.mozilla.org/en-US/firefox/addon/open-url-in-container/
+
+
+### 3. The .aws/config file should have:
 
 * the **jump_profile** should be the account that is allowed to assume the target role
 * Feel free to change the profile name
