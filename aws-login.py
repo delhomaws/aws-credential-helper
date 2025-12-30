@@ -89,7 +89,7 @@ def open_in_firefox(url, container):
             url = "ext+container:name={}&url={}".format(container, url)
             # command = "firefox --url 'ext+container:name={}&url={}'".format(container, url)
         
-        
+        # https://github.com/honsiorovskyi/open-url-in-container to add color support
         # print(f'Url is: {url}')
         # print(f'Comand is: {command}')
         # Open URL in a new Firefox window
@@ -166,11 +166,16 @@ def main():
 
     # Generate the AWS Management Console sign-in URL
     console_login_url = get_console_login_url(signin_token)
-    new_env = {
-        "AWS_ACCESS_KEY_ID"    : assumed_credentials['AccessKeyId'],
-        "AWS_SECRET_ACCESS_KEY": assumed_credentials['SecretAccessKey'],
-        "AWS_SESSION_TOKEN"    : assumed_credentials['SessionToken']
-    }
+    new_env = os.environ.copy()
+    new_env["AWS_ACCESS_KEY_ID"] = assumed_credentials['AccessKeyId'] 
+    new_env["AWS_SECRET_ACCESS_KEY"] = assumed_credentials['SecretAccessKey']
+    new_env["AWS_SESSION_TOKEN"] = assumed_credentials['SessionToken']
+
+    # new_env = {
+    #     "AWS_ACCESS_KEY_ID"    : assumed_credentials['AccessKeyId'],
+    #     "AWS_SECRET_ACCESS_KEY": assumed_credentials['SecretAccessKey'],
+    #     "AWS_SESSION_TOKEN"    : assumed_credentials['SessionToken']
+    # }
     
     if args.firefox:
         open_in_firefox(console_login_url, container)
