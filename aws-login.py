@@ -129,6 +129,11 @@ def main():
          help="Open the AWS Management Console sign-in URL in a new Firefox window in the specifyed container", 
     )
     parser.add_argument(
+        "--display",
+        help="Display the sign-in URL",
+        action="store_true"
+    )
+    parser.add_argument(
         "--clipboard", 
         help="Copy the AWS Management Console sign-in URL to the clipboard", 
         action="store_true"
@@ -180,6 +185,10 @@ def main():
     if args.firefox:
         open_in_firefox(console_login_url, container)
         print("New tab in Firefox opened")
+    if args.display:
+        print(f'AWS_ACCESS_KEY_ID: {assumed_credentials["AccessKeyId"]}')
+        print(f'AWS_SECRET_ACCESS_KEY: {assumed_credentials["SecretAccessKey"]}')
+        print(f'AWS_SESSION_TOKEN: {assumed_credentials["SessionToken"]}')
     if args.clipboard:
         pyperclip.copy(console_login_url)
         print("The sign-in URL has been copied to the clipboard.")
